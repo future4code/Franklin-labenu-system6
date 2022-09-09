@@ -1,20 +1,22 @@
+import { idGenerator } from "../services/idGenerator";
+
 export abstract class Pessoa {
-    protected id: string;
-    protected nome: string;
-    protected email: string;
-    protected data_nasc: string;
-    protected turma_id: number;
+    public id: string;
+    public nome: string;
+    public email: string;
+    public data_nasc: string;
+    public turma_id: string;
 
     constructor(
         nome: string,
         email: string,
         data_nasc: string,
-        turma_id: number,
+        turma_id: string,
     ){
-        this.id = Date.now().toString();
+        this.id = idGenerator();
         this.nome = nome;
         this.email = email;
         this.data_nasc = data_nasc;
-        this.turma_id = turma_id
+        this.turma_id = turma_id;
     }
 }

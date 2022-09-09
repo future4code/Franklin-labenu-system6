@@ -3,12 +3,35 @@ import { Docente } from "./models/Docente";
 import { Turma } from "./models/Turma";
 import { Especialidade } from "./models/Especialidade";
 import { Hobbie } from "./models/Hobbie";
+import { createTurma } from "./services/createTurma";
+import app from "./app";
+import { getTurmas } from "./endpoints/getTurmas";
+import { postCreateTurma } from "./endpoints/postCreateTurma";
+import { putModulo } from "./endpoints/putModulo";
+import { postCreateEstudante } from "./endpoints/postCreateEstudante";
+import { getEstudante } from "./endpoints/getEstudante";
+import { putTurma } from "./endpoints/putTurma";
+import { postCreateDocente } from "./endpoints/postCreateDocente";
+import { getDocente } from "./endpoints/getDocente";
+import { putDocenteTurma } from "./endpoints/putDocenteTurma";
 
-const hobbie = new Hobbie('Jogar')
-const estudante = new Estudante([hobbie], 'teste', 'teste', '00/00/0000', 1)
+app.get('/turmas', getTurmas)
 
-const turma = new Turma('teste', '01')
-console.log(turma);
+app.post('/turmas', postCreateTurma)
+
+app.put('/turmas/modulo', putModulo)
+
+app.post('/estudante', postCreateEstudante)
+
+app.get('/estudante', getEstudante)
+
+app.put('/estudante/turma', putTurma)
+
+app.post('/docente', postCreateDocente)
+
+app.get('/docente', getDocente)
+
+app.put('/docente/turma', putDocenteTurma)
 
 
 

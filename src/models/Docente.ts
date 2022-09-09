@@ -3,10 +3,10 @@ import { Especialidade } from "./Especialidade";
 
 export class Docente extends Pessoa{
     constructor(
-    private especialidades: Array<Especialidade>,
+    public especialidades: Array<Especialidade>,
     nome: string,
     email: string,
     data_nasc: string,
-    turma_id: number,
+    turma_id: string,
     ){super(nome, email, data_nasc, turma_id)}
 }

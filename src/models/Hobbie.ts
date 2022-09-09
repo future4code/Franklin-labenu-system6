@@ -1,10 +1,11 @@
+import { idGenerator } from "../services/idGenerator";
 export class Hobbie {
-    private id: string;
-    
+    public id: string;
+
     constructor(
     private nome: string
     ){
-        this.id = Date.now().toString();
+        this.id = idGenerator();
         this.nome = nome
     }
 }
